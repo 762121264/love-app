@@ -3,20 +3,63 @@
     "name": "Love App",
     "slug": "love-app",
     "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ec4899"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
-      "supportsTabletMode": true
+      "supportsTabletMode": true,
+      "bundleIdentifier": "com.loveapp.mobile",
+      "buildNumber": "1",
+      "config": {
+        "usesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "backgroundColor": "#ec4899"
+      },
+      "package": "com.loveapp.mobile",
+      "versionCode": 1,
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "INTERNET"
+      ],
+      "usesCleartextTraffic": false
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "Find your perfect match and celebrate love. Connect with compatible partners through our intelligent matching algorithm.",
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow Love App to access your photos.",
+          "cameraPermission": "Allow Love App to access your camera."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow Love App to access your location for better matches."
+        }
+      ]
+    ]
   }
 }
